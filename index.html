@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fetch API: GitHub + Weather (simple)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="min-h-screen bg-gray-50 flex items-start justify-center p-6">
+  <main class="w-full max-w-xl space-y-6">
+
+    <h1 class="text-xl font-semibold">Very simple Fetch demos</h1>
+
+    <!-- GitHub User Finder -->
+    <section class="bg-white p-4 rounded shadow">
+      <h2 class="font-medium mb-2">GitHub User Finder (no key)</h2>
+      <div class="flex gap-2">
+        <input id="ghInput" placeholder="username (e.g. torvalds)" class="flex-1 border px-2 py-1 rounded" />
+        <button id="ghBtn" class="px-3 py-1 bg-indigo-600 text-white rounded hover:opacity-80">Fetch</button>
+      </div>
+      <div id="ghResult" class="mt-3 text-sm text-gray-700"></div>
+    </section>
+
+    <!-- Weather (OpenWeather) -->
+    <section class="bg-white p-4 rounded shadow">
+      <h2 class="font-medium mb-2">Weather (OpenWeather)</h2>
+      <p class="text-xs text-gray-500 mb-2">Enter a city name and your API key from OpenWeather.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+        <input id="cityInput" placeholder="City name (e.g. London)" class="col-span-2 border px-2 py-1 rounded" />
+        <input id="apiKey" placeholder="OpenWeather API key" class="border px-2 py-1 rounded" />
+      </div>
+
+      <div class="flex gap-2 mt-2">
+        <button id="weatherBtn" class="px-3 py-1 bg-green-600 text-white rounded hover:opacity-80">Get Weather</button>
+        <button id="clearWeather" class="px-3 py-1 bg-gray-200 rounded hover:opacity-80">Clear</button>
+      </div>
+
+      <div id="weatherResult" class="mt-3 text-sm text-gray-700"></div>
+    </section>
+
+    <footer class="text-xs text-gray-500">Simple demos showing Fetch API, JSON parsing and error handling.</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
