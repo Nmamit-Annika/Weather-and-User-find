@@ -46,12 +46,12 @@ const weatherBtn = document.getElementById('weatherBtn');
 const cityInput = document.getElementById('cityInput');
 const weatherResult = document.getElementById('weatherResult');
 const clearWeather = document.getElementById('clearWeather');
-const apiKeyInput = '45c19ae4c589eccb2713f3537d77f31a';
+const apiKey = '45c19ae4c589eccb2713f3537d77f31a';
 
 
 async function fetchWeather(city) {
   if (!city) {
-    weatherResult.textContent = 'Enter a city name';
+    weatherResult.innerHTML = '<span class="text-red-600">Enter a city name</span>';
     return;
   }
   
