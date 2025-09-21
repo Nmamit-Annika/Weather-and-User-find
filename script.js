@@ -49,16 +49,12 @@ const clearWeather = document.getElementById('clearWeather');
 const apiKeyInput = '45c19ae4c589eccb2713f3537d77f31a';
 
 
-async function fetchWeather(city, apiKey) {
+async function fetchWeather(city) {
   if (!city) {
     weatherResult.textContent = 'Enter a city name';
     return;
   }
-  if (!apiKey) {
-    weatherResult.textContent = 'Enter your OpenWeather API key';
-    return;
-  }
-
+  
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${encodeURIComponent(apiKey)}&units=metric`;
 
   try {
@@ -85,8 +81,7 @@ async function fetchWeather(city, apiKey) {
 
 weatherBtn.addEventListener('click', () => {
   const city = cityInput.value.trim();
-  const key = apiKeyInput.value.trim();
-  fetchWeather(city, key);
+  fetchWeather(city);
 });
 
 cityInput.addEventListener('keydown', (e) => {
