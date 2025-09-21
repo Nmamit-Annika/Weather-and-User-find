@@ -44,7 +44,7 @@ ghInput.addEventListener('keydown', (e) => {
 // ---------- Weather (OpenWeather) ----------
 const weatherBtn = document.getElementById('weatherBtn');
 const cityInput = document.getElementById('cityInput');
-const apiKeyInput = document.getElementById('apiKey');
+const apiKeyInput = '45c19ae4c589eccb2713f3537d77f31a';
 const weatherResult = document.getElementById('weatherResult');
 const clearWeather = document.getElementById('clearWeather');
 
@@ -64,7 +64,6 @@ async function fetchWeather(city, apiKey) {
     weatherResult.textContent = 'Loading...';
     const res = await fetch(url);
     if (!res.ok) {
-      if (res.status === 401) throw new Error('Invalid API key (401)');
       if (res.status === 404) throw new Error('City not found (404)');
       throw new Error('Weather fetch error: ' + res.status);
     }
